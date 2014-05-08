@@ -36,10 +36,10 @@ module.exports = function(grunt) {
     jasmine: {
       pivotal: {
         src: [
-          'vendor/assets/javascripts/jquery.js',
-          'vendor/assets/javascripts/handlebars.js',
-          'vendor/assets/javascripts/ember.js',
-          'vendor/assets/javascripts/ember-data.js',
+          'bower_components/jquery/dist/jquery.js',
+          'bower_components/handlebars/handlebars.js',
+          'bower_components/ember/ember.js',
+          'bower_components/ember-data/ember-data.js',
 
           'dist/ember-data-elasticsearch-kit.js'
         ],
