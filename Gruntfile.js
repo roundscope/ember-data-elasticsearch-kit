@@ -33,7 +33,7 @@ module.exports = function(grunt) {
       }
     },
 
-    jasmine: {
+    /*jasmine: {
       pivotal: {
         src: [
           'bower_components/jquery/dist/jquery.js',
@@ -48,15 +48,37 @@ module.exports = function(grunt) {
           specs: 'spec/ember-data-elasticsearch-kit_spec.js'
         }
       }
+    },*/
+
+    connect: {
+      server: {
+        options: {
+          base: '.',
+          port: 9997
+        }
+      }
+    },
+
+    qunit: {
+      local: {
+        options: {
+          urls: ['http://localhost:9997/spec/index.html']
+        }
+      }
     }
 
   });
 
+  //grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-contrib-qunit');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  
+  //grunt.registerTask('spec', ['coffee', 'jasmine:pivotal']);
+  grunt.registerTask('build', ['coffee', 'uglify']);
+  grunt.registerTask('default', ['build']);
+  grunt.registerTask('server', ['build', 'connect:server:keepalive']);
+  grunt.registerTask('test', ['build', 'connect:server', 'qunit']);
 
-
-  grunt.registerTask('default', ['coffee', 'uglify']);
-  grunt.registerTask('spec', ['coffee', 'jasmine:pivotal']);
 };

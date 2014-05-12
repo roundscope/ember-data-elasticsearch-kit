@@ -1,3 +1,4 @@
+###
 describe 'MappingDSL', ->
 
   beforeEach ->
@@ -118,3 +119,4 @@ describe 'MappingDSL', ->
         @mapping "lastName", type: "string"
     responce = @subject.create("http://localhost:9200/test_index", mapping)
     expect(responce).toEqual({ok: true, acknowledged: true})
+###

@@ -1,3 +1,10 @@
+#Ember.ENV.TESTING = true
+#module 'ember-data-elasticsearch-kit'
+
+test "simple test", ->
+  ok(1 == 1, "Passed!")
+
+###
 describe 'BulkDSL', ->
 
   beforeEach ->
@@ -28,3 +35,4 @@ describe 'BulkDSL', ->
                                          '{"id":2,"title":"bar2 updated","description":"foo bar test"}',
                                          '{"delete":{"_type":"document","_id":3,"_index":"test_index"}}',
                                          '{"id":3}' ])
+###

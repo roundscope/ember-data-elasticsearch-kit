@@ -1,3 +1,4 @@
+###
 describe 'Facets', ->
 
   beforeEach ->
@@ -13,3 +14,4 @@ describe 'Facets', ->
 
     expect(json).toEqual({
       query:{match: {title: 'T*'}}, facets: {global_tags: {global: true, terms: {tags: ['java', 'erlang']}}}})
+###

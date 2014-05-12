@@ -1,3 +1,4 @@
+###
 describe 'DS.ElasticSearchAdapter', ->
   beforeEach ->
     @subject = new TestEnv()
@@ -97,3 +98,4 @@ describe 'DS.ElasticSearchAdapter', ->
         runs ->
           expect(models.get('global_tags').total).toEqual(4)
           expect(models.get('current_tags').total).toEqual(4)
+###

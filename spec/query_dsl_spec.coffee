@@ -1,3 +1,4 @@
+###
 describe 'QueryDSL', ->
 
   beforeEach ->
@@ -793,3 +794,4 @@ describe 'QueryDSL', ->
         script: "doc['num1'].value &gt; 1"
       }
     }})
+###
