@@ -19,7 +19,6 @@ module.exports = function(grunt) {
           'spec/ember-data-elasticsearch-kit_spec.js': [
             'spec/env.coffee',
             'spec/*.coffee'
-            //'spec/elasticsearch-adapter_spec.coffee'
           ]
         }
       }
@@ -85,7 +84,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
+  //grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-qunit');
@@ -93,7 +92,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-rerun');
   
-  grunt.registerTask('spec', ['coffee', 'jasmine:pivotal']);
+  //grunt.registerTask('spec', ['coffee', 'jasmine:pivotal']);
   grunt.registerTask('build', ['coffee', 'uglify']);
   grunt.registerTask('default', ['build']);
   grunt.registerTask('dev', ['build', 'connect:server', 'watch']);
