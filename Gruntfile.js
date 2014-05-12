@@ -19,6 +19,7 @@ module.exports = function(grunt) {
           'spec/ember-data-elasticsearch-kit_spec.js': [
             'spec/env.coffee',
             'spec/*.coffee'
+            //'spec/elasticsearch-adapter_spec.coffee'
           ]
         }
       }
@@ -36,7 +37,7 @@ module.exports = function(grunt) {
     /*jasmine: {
       pivotal: {
         src: [
-          'bower_components/jquery/dist/jquery.js',
+          'bower_components/jquery/jquery.js',
           'bower_components/handlebars/handlebars.js',
           'bower_components/ember/ember.js',
           'bower_components/ember-data/ember-data.js',
@@ -59,6 +60,21 @@ module.exports = function(grunt) {
       }
     },
 
+    watch: {
+      scripts: {
+        files: ['spec/*.coffee', 'spec/index.html'],
+        tasks: ['rerun:dev']
+      }
+    },
+
+    rerun: {
+      dev: {
+        options: {
+          tasks: ['dev']
+        }
+      }
+    },
+
     qunit: {
       local: {
         options: {
@@ -69,16 +85,18 @@ module.exports = function(grunt) {
 
   });
 
-  //grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-rerun');
   
-  //grunt.registerTask('spec', ['coffee', 'jasmine:pivotal']);
+  grunt.registerTask('spec', ['coffee', 'jasmine:pivotal']);
   grunt.registerTask('build', ['coffee', 'uglify']);
   grunt.registerTask('default', ['build']);
-  grunt.registerTask('server', ['build', 'connect:server:keepalive']);
+  grunt.registerTask('dev', ['build', 'connect:server', 'watch']);
   grunt.registerTask('test', ['build', 'connect:server', 'qunit']);
 
 };

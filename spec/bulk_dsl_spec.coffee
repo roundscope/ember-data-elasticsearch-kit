@@ -1,8 +1,9 @@
 #Ember.ENV.TESTING = true
 #module 'ember-data-elasticsearch-kit'
 
-test "simple test", ->
-  ok(1 == 1, "Passed!")
+#module "simple module"
+#test "simple test", ->
+#  ok(1 == 1, "Passed!")
 
 ###
 describe 'BulkDSL', ->
