@@ -2,8 +2,6 @@ module 'DS.ElasticSearchAdapter',
   setup: ->
     @subject = new TestEnv()
     @async = window.async
-  teardown: ->
-    @subject = null
 
 # find
 test 'find: by id', ->
