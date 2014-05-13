@@ -1,0 +1,10 @@
+{
+  "name": "ember-data-elasticsearch-kit",
+  "dependencies": {
+    "handlebars": "~1.0.0",
+    "jquery": "~1.10.1",
+    "ember": "~1.0.0",
+    "ember-data": "1.0.0-beta.2",
+    "qunit": "~1.14.0"
+  }
+}
