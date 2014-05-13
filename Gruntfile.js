@@ -33,23 +33,6 @@ module.exports = function(grunt) {
       }
     },
 
-    /*jasmine: {
-      pivotal: {
-        src: [
-          'bower_components/jquery/jquery.js',
-          'bower_components/handlebars/handlebars.js',
-          'bower_components/ember/ember.js',
-          'bower_components/ember-data/ember-data.js',
-
-          'dist/ember-data-elasticsearch-kit.js'
-        ],
-
-        options: {
-          specs: 'spec/ember-data-elasticsearch-kit_spec.js'
-        }
-      }
-    },*/
-
     connect: {
       server: {
         options: {
@@ -84,7 +67,6 @@ module.exports = function(grunt) {
 
   });
 
-  //grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-qunit');
@@ -92,7 +74,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-rerun');
   
-  //grunt.registerTask('spec', ['coffee', 'jasmine:pivotal']);
   grunt.registerTask('build', ['coffee', 'uglify']);
   grunt.registerTask('default', ['build']);
   grunt.registerTask('dev', ['build', 'connect:server', 'watch']);
