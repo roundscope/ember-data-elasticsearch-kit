@@ -57,6 +57,20 @@ module.exports = function(grunt) {
       }
     },
 
+    clean: {
+      bower: [
+        'bower_components'
+      ],
+      node: [
+        'node_modules'
+      ],
+      js: [
+        'spec/ember-data-elasticsearch-kit_spec.js',
+        'dist/ember-data-elasticsearch-kit.js',
+        'dist/ember-data-elasticsearch-kit.min.js'
+      ]
+    },
+
     qunit: {
       local: {
         options: {
@@ -72,6 +86,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-rerun');
   
   grunt.registerTask('build', ['coffee', 'uglify']);
